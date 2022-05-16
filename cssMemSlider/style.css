@@ -1,0 +1,141 @@
+html {
+	background-color: rgb(129, 128, 128);
+}
+body {
+    box-sizing: border-box;
+    
+}
+div {
+    margin: 0;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.slider-box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    overflow: hidden;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+input {
+    display: none;
+}
+.images-box {
+    display: flex;
+    align-items: center;
+    width: 400%;
+    transition: all 0.5s;
+    
+}
+.image {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+img {
+    width: 100%;
+    border-radius: 1rem;
+}
+.choice {
+    display: flex;
+    align-self: center;
+}
+label {
+    
+    width: 10px;
+	height: 10px;
+    background-color: #fff;
+	margin: 0px 0px 0px 25px;
+	border-radius: 50%;
+	opacity: 0.3;
+	cursor: pointer;
+    outline-color: #008acb;
+    outline-style: solid;
+    outline-width: 2px;
+    
+}
+label:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+label:checked {
+    background-color: #fdd;
+}
+.name-textcom-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.textcom {
+    height: 2em;
+    overflow: hidden;
+}
+
+.textcom-up {
+    height: 400%;
+    transition: all 0.5s;
+    font: 0.9em/2rem 'Arial', sans-serif;
+    color: rgb(255, 255, 255);
+}
+#push1:checked ~ .images-box{
+	margin-left: 0;
+}
+#push2:checked ~ .images-box{
+	margin-left: -100%;
+}
+#push3:checked ~ .images-box{
+	margin-left: -200%;
+}
+#push4:checked ~ .images-box{
+	margin-left: -300%;
+}
+#push1:checked ~ .name-textcom-box .textcom-up{
+	margin-top: 0;
+}
+#push2:checked ~ .name-textcom-box .textcom-up{
+	margin-top: -2rem;
+}
+#push3:checked ~ .name-textcom-box .textcom-up{
+	margin-top: -4rem;
+}
+#push4:checked ~ .name-textcom-box .textcom-up{
+	margin-top: -6rem;
+}
+/* label:nth-child */
+#push1:checked ~ .name-textcom-box label:nth-child(1),
+#push2:checked ~ .name-textcom-box label:nth-child(2),
+#push3:checked ~ .name-textcom-box label:nth-child(3),
+#push4:checked ~ .name-textcom-box label:nth-child(4) {
+    background-color: #008acb;
+    opacity: 1;
+    transform: scale(1.1);
+}
+/* adaptation */
+@media (max-width: 768px) {
+    .name-textcom-box, html {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        text-align: center;
+        margin:auto;
+        font-size: 65%;
+        
+    }
+    
+label {
+    margin: 0px 0px 0px 15px;
+    text-align: center;
+    flex-direction: column;
+    
+      
+}
+    .textcom-up {
+        font: 0.8em/2rem 'Arial', sans-serif;
+        
+    }
+}
